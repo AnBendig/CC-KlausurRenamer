@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CC_KlausurRenamer"
         mc:Ignorable="d"
-        Title="Comcave Klausur Renamer" Height="265" Width="600" ResizeMode="NoResize">
+        Title="Comcave Klausur Renamer" Height="265" Width="600" ResizeMode="NoResize" WindowStyle="ToolWindow" Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="120" />
@@ -23,33 +23,38 @@
             <RowDefinition Height="25" />
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="Blue"></Grid>
-        <Grid Grid.Row="1" Grid.Column="0" Background="#8686FF">
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="Blue" Margin="5" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="337*"/>
+                <ColumnDefinition Width="263*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0" Background="#8686FF" Margin="5,0">
             <Label HorizontalAlignment="Left">Kursnummer</Label>
         </Grid>
-        <Grid Grid.Row="2" Grid.Column="0" Background="#8686FF">
+        <Grid Grid.Row="2" Grid.Column="0" Background="#8686FF" Margin="5,0">
             <Label HorizontalAlignment="Left">Dozent Vorname</Label>
         </Grid>
-        <Grid Grid.Row="3" Grid.Column="0" Background="#8686FF">
+        <Grid Grid.Row="3" Grid.Column="0" Background="#8686FF"  Margin="5,0">
             <Label HorizontalAlignment="Left">Dozent Nachname</Label>
         </Grid>
-        <Grid Grid.Row="4" Grid.Column="0" Background="#8686FF">
+        <Grid Grid.Row="4" Grid.Column="0" Background="#8686FF"  Margin="5,0">
             <Label HorizontalAlignment="Left">Student Vorname</Label>
         </Grid>
-        <Grid Grid.Row="5" Grid.Column="0" Background="#8686FF">
+        <Grid Grid.Row="5" Grid.Column="0" Background="#8686FF"  Margin="5,0">
             <Label HorizontalAlignment="Left">Student Nachname</Label>
         </Grid>
-        <Grid Grid.Row="6" Grid.Column="0" Background="#8686FF">
+        <Grid Grid.Row="6" Grid.Column="0" Background="#8686FF"  Margin="5,0">
             <Label HorizontalAlignment="Left">Klausurdatum</Label>
         </Grid>
-        <Grid Grid.Row="7" Grid.Column="0" Background="#8686FF">
+        <Grid Grid.Row="7" Grid.Column="0" Background="#8686FF" Margin="5,0">
             <Label HorizontalAlignment="Left">Kursnummer</Label>
         </Grid>
-        <Grid Grid.Row="8" Grid.Column="0" Background="#8686FF">
+        <Grid Grid.Row="8" Grid.Column="0" Background="#8686FF" Margin="5,0">
             <Label HorizontalAlignment="Left">Dateiname</Label>
         </Grid>
 
-        <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtCourseNo" TextChanged="calcFileName"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtCourseNo" TextChanged="calcFileName" Margin="2,2"></TextBox>
         <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtTrainFName" TextChanged="calcFileName"></TextBox>
         <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtTrainLName" TextChanged="calcFileName"></TextBox>
         <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtStudFName" TextChanged="calcFileName"></TextBox>

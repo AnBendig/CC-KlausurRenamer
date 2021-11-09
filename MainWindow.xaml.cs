@@ -24,14 +24,18 @@ namespace CC_KlausurRenamer
         public MainWindow()
         {
             InitializeComponent();
-
+            txtStudFName.Text = Properties.Settings.Default.StudentFName;
+            txtStudLName.Text = Properties.Settings.Default.StudentLName;
             datTestDate.Text = System.DateTime.Today.Date.GetDateTimeFormats('d')[1];
         }
+
+        
 
         private string computeFileName()
         {
             string fileName = txtCourseNo.Text + "_Doz_" + txtTrainFName.Text + "_" + txtTrainLName.Text + "_TN_" + txtStudFName.Text + "_" + txtStudLName.Text + "_" + datTestDate.Text.Replace(".", string.Empty); ;
 
+            fileName = fileFriendlyFormat(fileName);
             return fileName;
         }
 
@@ -47,13 +51,29 @@ namespace CC_KlausurRenamer
 
         private string fileFriendlyFormat(string value)
         {
-            string[] source = { "ä", "ö", "ü" };
-            string[] target = { "ae", "oe", "ue" };
-            for (int counter = 0; counter <= source.Length; counter++)
+            string[] source = { "ä", "ö", "ü", "Ä", "Ö", "Ü", "ß" , " "};
+            string[] target = { "ae", "oe", "ue", "Ae", "Oe", "Ue", "ss" ,"_" };
+            for (int counter = 0; counter <= source.Length - 1; counter++)
             {
                 value = value.Replace(source[counter], target[counter]);
             }
             return value;
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            bool IsChanged = false;
+            if (!(txtStudFName.Text.Equals(Properties.Settings.Default.StudentFName)))
+            {
+                Properties.Settings.Default.StudentFName = txtStudFName.Text;
+                IsChanged = true;
+            }
+            if (!(txtStudLName.Text.Equals(Properties.Settings.Default.StudentLName)))
+            {
+                Properties.Settings.Default.StudentLName = txtStudLName.Text;
+                IsChanged |= true;  
+            }
+            if (IsChanged) Properties.Settings.Default.Save();
         }
     }
 }

@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CC_KlausurRenamer.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="StudentFName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Andreas</Value>
+    </Setting>
+    <Setting Name="StudentLName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Bendig</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
