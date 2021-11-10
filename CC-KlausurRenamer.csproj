@@ -2,11 +2,12 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net471</TargetFramework>
     <RootNamespace>CC_KlausurRenamer</RootNamespace>
     <UseWPF>true</UseWPF>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <StartupObject>CC_KlausurRenamer.App</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
