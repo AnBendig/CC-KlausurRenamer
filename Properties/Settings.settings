@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="StudentFName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Andreas</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="StudentLName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Bendig</Value>
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

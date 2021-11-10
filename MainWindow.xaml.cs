@@ -29,13 +29,18 @@ namespace CC_KlausurRenamer
             datTestDate.Text = System.DateTime.Today.Date.GetDateTimeFormats('d')[1];
         }
 
-        
-
         private string computeFileName()
         {
             string fileName = txtCourseNo.Text + "_Doz_" + txtTrainFName.Text + "_" + txtTrainLName.Text + "_TN_" + txtStudFName.Text + "_" + txtStudLName.Text + "_" + datTestDate.Text.Replace(".", string.Empty); ;
 
             fileName = fileFriendlyFormat(fileName);
+
+            if (!(txtCourseNo.Text.Equals("") || txtTrainFName.Text.Equals("") || txtTrainLName.Text.Equals("") || txtStudFName.Text.Equals("") || txtStudLName.Text.Equals("") || datTestDate.Text.Equals("")))
+            {
+                btn_Copy.IsEnabled = true;
+                txtFileName.IsEnabled = true;
+            }
+
             return fileName;
         }
 
@@ -51,8 +56,8 @@ namespace CC_KlausurRenamer
 
         private string fileFriendlyFormat(string value)
         {
-            string[] source = { "ä", "ö", "ü", "Ä", "Ö", "Ü", "ß" , " "};
-            string[] target = { "ae", "oe", "ue", "Ae", "Oe", "Ue", "ss" ,"_" };
+            string[] source = { "ä", "ö", "ü", "Ä", "Ö", "Ü", "ß", " " };
+            string[] target = { "ae", "oe", "ue", "Ae", "Oe", "Ue", "ss", "_" };
             for (int counter = 0; counter <= source.Length - 1; counter++)
             {
                 value = value.Replace(source[counter], target[counter]);
@@ -71,7 +76,7 @@ namespace CC_KlausurRenamer
             if (!(txtStudLName.Text.Equals(Properties.Settings.Default.StudentLName)))
             {
                 Properties.Settings.Default.StudentLName = txtStudLName.Text;
-                IsChanged |= true;  
+                IsChanged |= true;
             }
             if (IsChanged) Properties.Settings.Default.Save();
         }

@@ -25,7 +25,7 @@ namespace CC_KlausurRenamer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Andreas")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string StudentFName {
             get {
                 return ((string)(this["StudentFName"]));
@@ -37,7 +37,7 @@ namespace CC_KlausurRenamer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Bendig")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string StudentLName {
             get {
                 return ((string)(this["StudentLName"]));
